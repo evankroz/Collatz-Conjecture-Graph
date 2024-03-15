@@ -21,26 +21,6 @@ def get_entry_value():
         return int(num_entry.get())
     except ValueError:
         return 1  # Default to 1 if input is not a valid integer
-def collatz_sequence(num):
-    sequence_list = [num]
-    while num != 1:
-        if num % 2 == 0:
-            num //= 2
-        else:
-            num = num * 3 + 1
-        sequence_list.append(num)
-    return sequence_list
-
-def on_entry_key_release(event):
-    num = get_entry_value()
-    update_graph(num)
-
-def get_entry_value():
-    try:
-        return int(num_entry.get())
-    except ValueError:
-        return 1  # Default to 1 if input is not a valid integer
-
 def update_graph(num):
     sequence_list = collatz_sequence(num)
 
